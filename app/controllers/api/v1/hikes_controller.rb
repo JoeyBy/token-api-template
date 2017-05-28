@@ -2,7 +2,8 @@ class Api::V1::HikesController < ApiController
 	before_action :require_login
 
 	def index
-		render json: Hike.all
+		hikes = Hike.all
+		paginate json: hikes
 	end
 
 	def show

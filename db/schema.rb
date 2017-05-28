@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528050848) do
+ActiveRecord::Schema.define(version: 20170528194345) do
 
   create_table "hikes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "difficulty"
     t.string   "length"
-    t.string   "region"
     t.string   "distance"
     t.integer  "start_elevation"
     t.integer  "end_elevation"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "profile_id"
     t.integer  "location_id"
+    t.string   "route",           default: "{}"
     t.index ["location_id"], name: "index_hikes_on_location_id"
     t.index ["profile_id"], name: "index_hikes_on_profile_id"
   end
