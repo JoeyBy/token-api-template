@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20170528041909) do
     t.integer  "end_elevation"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "profile_id"
+    t.integer  "location_id"
+    t.index ["location_id"], name: "index_hikes_on_location_id"
+    t.index ["profile_id"], name: "index_hikes_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|

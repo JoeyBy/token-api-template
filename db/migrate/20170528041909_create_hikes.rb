@@ -12,5 +12,7 @@ class CreateHikes < ActiveRecord::Migration[5.0]
 
     	t.timestamps
     end
+    add_reference :hikes, :profile, foreign_key: true
+    add_reference :hikes, :location, foreign_key: true
   end
 end
