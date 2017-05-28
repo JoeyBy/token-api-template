@@ -22,7 +22,7 @@ class ApiController < ActionController::Base
 				ActiveSupport::SecurityUtils.secure_compare(
 					::Digest::SHA256.hexdigest(token),
 					::Digest::SHA256.hexdigest(user.token))
-				user
+				Profile.find(user.profile_id)
 			end
 		end
 	end

@@ -7,5 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 
-User.create(email: "bugs@canihike.com", password: "123456", token: nil)
-User.create(email: "daffy@canihike.com", password: "123456", token: nil)
+User.create(email: "bugs@canihike.com", password: "123456", token: nil, profile_id: 1)
+User.create(email: "daffy@canihike.com", password: "123456", token: nil, profile_id: 2)
+
+Profile.create(username: "BugsBuny4", bio: "Ehy, whats up doc. I want a carrot. Carrot == life")
+Profile.create(username: "Ducksquad4", bio: "Dolla Dolla bills yall. #noPants4Lyfe")
