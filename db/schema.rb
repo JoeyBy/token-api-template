@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528033927) do
+ActiveRecord::Schema.define(version: 20170528041909) do
+
+  create_table "hikes", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "difficulty"
+    t.string   "length"
+    t.string   "region"
+    t.string   "distance"
+    t.integer  "start_elevation"
+    t.integer  "end_elevation"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "token"
