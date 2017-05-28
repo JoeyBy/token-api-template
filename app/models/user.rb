@@ -2,6 +2,8 @@ class User < ApplicationRecord
 	has_secure_password
 	has_secure_token
 
+	has_one :profile
+
 	def self.valid_login?(email, password)
 		user = find_by(email: email)
 		if user && user.authenticate(password)
