@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528194345) do
+ActiveRecord::Schema.define(version: 20170528211518) do
 
   create_table "hikes", force: :cascade do |t|
     t.string   "name"
@@ -25,8 +25,15 @@ ActiveRecord::Schema.define(version: 20170528194345) do
     t.integer  "profile_id"
     t.integer  "location_id"
     t.string   "route",           default: "{}"
+    t.string   "start_lat"
+    t.string   "start_lng"
     t.index ["location_id"], name: "index_hikes_on_location_id"
     t.index ["profile_id"], name: "index_hikes_on_profile_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.string "region"
   end
 
   create_table "profiles", force: :cascade do |t|
